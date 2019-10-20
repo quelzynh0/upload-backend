@@ -30,6 +30,4 @@ app.use(
 
 app.use(require('./routes'));
 
-app.listen(3000, function(){
-    console.log("Servidor rodando!!!");
-});
+app.listen(process.env.PORT || 3000);
