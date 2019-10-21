@@ -25,7 +25,7 @@ const storageTypes = {
     contentType: multerS3.AUTO_CONTENT_TYPE,
     acl: 'public-read',
     key: (req, file, cb) => {
-      crypto.randomBytes(16, (err, hash) => {
+      crypto.randomBytes(6, (err, hash) => {
         if (err) cb(err);
 
         const filename = `${hash.toString('hex')}-${file.originalname}`;
