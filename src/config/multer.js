@@ -10,7 +10,7 @@ const storageTypes = {
       cb(null, path.resolve(__dirname, '..', '..', 'tmp', 'uploads'));
     },
     filename: (req, file, cb) => {
-      crypto.randomBytes(16, (err, hash) => {
+      crypto.randomBytes(6, (err, hash) => {
         if (err) cb(err);
 
         file.key = `${hash.toString('hex')}-${file.originalname}`;
